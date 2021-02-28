@@ -9,7 +9,11 @@
 </head>
 <body>
 <nav>
-    <button id="fetch">Fetch Products</button>
+    <label for="category"></label><select id="category">
+        <option hidden value="">Select Category</option>
+        <option value="electronics">Electronics</option>
+        <option value="confectionery">Confectionery</option>
+    </select>
 </nav>
 <hr>
 <div id="products"></div>
