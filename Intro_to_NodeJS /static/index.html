@@ -3,20 +3,58 @@
 <head>
     <title>My App</title>
     <script src="app.js" type="module"></script>
-    <style>body {
-        background: #fad8d8
-    }</style>
+    <style>
+        body {
+            background: #fad8d8
+        }
+
+        #add {
+            margin-top: 1em;
+            width: 20rem;
+            display: none;
+        }
+
+        #add input {
+            margin-bottom: .5em;
+        }
+
+        [name="name"], [name="rrp"] {
+            width: calc(10rem - 2px)
+        }
+
+        [name="info"] {
+            width: 20rem
+        }
+
+        #add button {
+            font-weight: bold;
+            width: 5em;
+            float: right
+        }
+    </style>
 </head>
 <body>
 <nav>
     <label for="category"></label><select id="category">
-        <option hidden value="">Select Category</option>
-        <option value="electronics">Electronics</option>
-        <option value="confectionery">Confectionery</option>
-    </select>
+    <option hidden value="">Select Category</option>
+    <option value="electronics">Electronics</option>
+    <option value="confectionery">Confectionery</option>
+</select>
 </nav>
 <hr>
 <div id="products"></div>
+<form id="add">
+    <label>
+        <input name="name" placeholder="name" required>
+    </label>
+    <label>
+        <input name="rrp" placeholder="rrp" required type="number">
+    </label>
+    <label>
+        <input name="info" placeholder="info" required>
+    </label>
+    <button type="submit">Add</button>
+</form>
 <template id="item">
     <style>
         details {
