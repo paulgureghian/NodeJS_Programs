@@ -1,9 +1,13 @@
 const API = 'http://localhost:3000'
 
-const populateProducts = async (category) => {
+const populateProducts = async (category, method = 'GET', payload) => {
     const products = document.querySelector('#products')
     products.innerHTML = ''
-    const res = await fetch( ` ${API}/${category} ` )
+    const send = method === 'GET' ? {} : {
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+    }
+    const res = await fetch(` ${API}/${category} `, {method, ...send})
     const data = await res.json()
     for (const product of data) {
         const item = document.createElement('product-item')
@@ -16,10 +20,25 @@ const populateProducts = async (category) => {
         products.appendChild(item)
     }
 }
-const category = document.querySelector('#category')
 
-category.addEventListener('input', async ({ target }) => {
+const category = document.querySelector('#category')
+const add = document.querySelector('#add')
+
+category.addEventListener('input', async ({target}) => {
+    add.style.display = 'block'
     await populateProducts(target.value)
+})
+
+add.addEventListener('submit', async (e) => {
+    e.preventDefault()
+    const {target} = e
+    const payload = {
+        name: target.name.value,
+        rrp: target.rrp.value,
+        info: target.info.value
+    }
+    await populateProducts(category.value, 'POST', payload)
+    target.reset()
 })
 
 customElements.define('product-item', class Item extends HTMLElement {
