@@ -36,10 +36,10 @@
 <body>
 <nav>
     <label for="category"></label><select id="category">
-    <option hidden value="">Select Category</option>
-    <option value="electronics">Electronics</option>
-    <option value="confectionery">Confectionery</option>
-</select>
+        <option hidden value="">Select Category</option>
+        <option value="electronics">Electronics</option>
+        <option value="confectionery">Confectionery</option>
+    </select>
 </nav>
 <hr>
 <div id="products"></div>
@@ -76,6 +76,9 @@
             </strong> - <em>
             <slot name="rrp"></slot>
         </em>
+            <small>[Orders:
+                <slot name="orders">pending</slot>
+                ]</small>
         </summary>
         <p>
             <slot name="info"></slot>
@@ -84,3 +87,4 @@
 </template>
 </body>
 </html>
+
