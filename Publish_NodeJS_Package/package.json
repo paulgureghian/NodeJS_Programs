@@ -1,5 +1,5 @@
 {
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Paul A. Gureghian",
   "license": "MIT",
   "keywords": [
@@ -27,7 +27,7 @@
     "prebuild": "rimraf dist",
     "build": "babel src --out-dir dist",
     "release": "standard-version",
-    "postrelease": "git push --follow-tags origin main",
+    "postrelease": "git push --follow-tags origin master",
     "prepublishOnly": "npm run build"
   }
 }
