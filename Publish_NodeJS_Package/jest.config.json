@@ -1,0 +1,9 @@
+{
+  "testEnvironment": "node",
+  "testRegex": "/test/.*\\.(test|spec)?\\.js$",
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "node"
+  ]
+}
