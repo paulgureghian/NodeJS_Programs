@@ -9,6 +9,8 @@ Just to make sure that we don’t publish any unnecessary files in the package, 
 The node will generate the tar file of the package without publishing it. 
 If the content of this archive is okay, we can publish our new package:
 
-2. npm publish
+2. npm login
 
-3. Check the result on npmjs.com:
+3. npm publish
+
+4. Check the result on npmjs.com:
