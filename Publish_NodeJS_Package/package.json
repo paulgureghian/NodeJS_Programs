@@ -1,7 +1,7 @@
 {
   "version": "0.0.1",
   "author": "Paul A. Gureghian",
-  "name": "nodejs-programs",
+  "name": "publish_nodejs_package",
   "license": "MIT",
   "keywords": [
     "nodejs",
